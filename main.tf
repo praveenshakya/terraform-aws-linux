@@ -89,7 +89,6 @@ resource "aws_security_group" "web_sg" {
 resource "aws_instance" "web_instance" {
   ami           = "ami-0533f2ba8a1995cf9"
   instance_type = "t2.nano"
-  key_name      = "MyKeyPair2"
 
   subnet_id                   = aws_subnet.some_public_subnet.id
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
